@@ -66,7 +66,7 @@ export default function ExportPage() {
         block?.vineyards?.name || '',
         block?.area || block?.name || '',
         block?.varieties?.canonical_name || '',
-        obs.profiles?.full_name || '',
+        (Array.isArray(obs.profiles) ? obs.profiles[0] : obs.profiles)?.full_name || '',
         phen?.el_stage || '',
         phen?.description || '',
         pest?.severity || '',
