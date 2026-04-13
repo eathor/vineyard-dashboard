@@ -53,7 +53,8 @@ export default function ExportPage() {
     ];
 
     const rows = (data || []).map((obs) => {
-      const block = obs.blocks;
+     // @ts-ignore
+      const block = (Array.isArray(obs.blocks) ? obs.blocks[0] : obs.blocks) as any;
       const phen = Array.isArray(obs.phenology) ? obs.phenology[0] : obs.phenology;
       const pest = Array.isArray(obs.pest_pressure) ? obs.pest_pressure[0] : obs.pest_pressure;
       const disease = Array.isArray(obs.disease_pressure) ? obs.disease_pressure[0] : obs.disease_pressure;
