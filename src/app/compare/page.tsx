@@ -65,6 +65,7 @@ export default function ComparePage() {
     }>();
 
     for (const obs of (data || [])) {
+      // @ts-ignore
       const block = (Array.isArray(obs.blocks) ? obs.blocks[0] : obs.blocks) as any;
       const blockName = `${block?.area || block?.name} (${block?.varieties?.canonical_name || '—'})`;
       const key = obs.block_id;
