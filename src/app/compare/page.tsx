@@ -142,7 +142,7 @@ export default function ComparePage() {
               <XAxis dataKey="block" angle={-35} textAnchor="end" interval={0} fontSize={12} />
               <YAxis domain={[0, 4]} ticks={[0, 1, 2, 3, 4]} fontSize={12} />
               <Tooltip
-                formatter={(value: number, name: string) => [value.toFixed(2), name]}
+                formatter={(value: any, name: any) => [Number(value).toFixed(2), name]}
                 labelFormatter={(label) => `Block: ${label}`}
               />
               <Legend />
